@@ -30,7 +30,7 @@ public class AuthService {
                 return new ResponseEntity<>("El usuario ya existe", HttpStatus.NOT_FOUND);
             }
 
-            UserModel newUser = authRepositorie.save(userModel);
+            authRepositorie.save(userModel);
 
             return new ResponseEntity<>("usuario creado satisfactoriamente!", HttpStatus.CREATED);
 
