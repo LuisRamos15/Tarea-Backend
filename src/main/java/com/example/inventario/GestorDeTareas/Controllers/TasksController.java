@@ -18,18 +18,5 @@ public class TasksController {
     public ResponseEntity<?> createTask(@RequestBody TaskDTO taskDTO, @PathVariable(value = "userId") long userId) {
         return taskService.createNewTask(taskDTO, userId);
     }
-    @PutMapping(value = "/user/{userId}/task/{taskId}")
-    public ResponseEntity<?> updateTask(@RequestBody TaskDTO taskDTO, @PathVariable(value = "userId") long userId, @PathVariable(value = "taskId") long taskId) {
-        return taskService.updateTask(taskDTO, taskId, userId);
-    }
-
-    @DeleteMapping(value = "/user/{userId}/task/{taskId}")
-    public ResponseEntity<?> deleteTask(@PathVariable(value = "userId") long userId, @PathVariable(value = "taskId") long taskId) {
-        return taskService.deleteTask(taskId, userId);
-    }
-    @GetMapping(value = "/user/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> getAllTasksByUserId(@PathVariable(value = "userId") long userId) {
-        return taskService.getAllTasksByUserId(userId);
-    }
 
 }
