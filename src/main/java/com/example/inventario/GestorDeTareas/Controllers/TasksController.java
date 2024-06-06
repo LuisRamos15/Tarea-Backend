@@ -18,7 +18,7 @@ public class TasksController {
     public ResponseEntity<?> getAllTaskByUserId(@PathVariable(value = "userId") long userId) {
         return taskService.getAllTaskByUserId(userId);
     }
-
+  
     @PostMapping(value = "/user/{userId}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createTask(@RequestBody TaskDTO taskDTO, @PathVariable(value = "userId") long userId) {
         return taskService.createNewTask(taskDTO, userId);
